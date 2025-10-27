@@ -20,7 +20,6 @@ class BankAccount(ABC):
         __client_number (int): Client number of the account holder.
         __balance (float): Current account balance.
     """
-    BASE_SERVICE_CHARGE = 0.50
 
     def __init__(self, account_number: int, client_number: int, balance, date_created: date):
         """
