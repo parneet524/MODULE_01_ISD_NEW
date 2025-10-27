@@ -26,23 +26,21 @@ class ManagementFeeStrategy(ServiceChargeStrategy):
         """
         self._date_created = date_created
         self._management_fee = management_fee
-
+    
     def calculate_service_charges(self, account) -> float:
         """
         Calculates the service charge for an InvestmentAccount.
 
         Logic (based on original InvestmentAccount.get_service_charges):
-        - If the account was created more than 10 years ago → waive the fee (0.00)
-        - Otherwise → apply the management fee + base service charge
-
-        :param account: BankAccount object (InvestmentAccount) to calculate charges for.
-        :return: Calculated service charge (float)
+        - If the account is 10 years old or older → only base service charge applies.
+        - Otherwise → base service charge + management fee.
         """
-        # If the account is older than 10 years, no service charge applies
         if self._date_created <= self.TEN_YEARS_AGO:
-            service_charge = 0.00
+            # Account is at least 10 years old → no management fee, only base charge
+            service_charge = self.BASE_SERVICE_CHARGE
         else:
-            # Apply management fee plus base service charge
+            # Newer than 10 years → base charge + management fee
             service_charge = self.BASE_SERVICE_CHARGE + self._management_fee
 
         return round(service_charge, 2)
+
