@@ -26,3 +26,15 @@ In the **`Client`** class:
 - Private attributes (`__client_number`, `__first_name`, `__last_name`, and `__email_address`) are used to protect client data.
 - Input validation ensures client numbers are integers, names are not blank, and email addresses are in valid format.
 - Access to data is controlled through property methods, demonstrating encapsulation and maintaining data accuracy.
+
+## Polymorphism
+
+Polymorphism was achieved through the use of inheritance and method overriding in the BankAccount subclasses.
+
+The abstract class `BankAccount` defines the abstract method `get_service_charges()`, which enforces that all subclasses — `ChequingAccount`, `SavingsAccount`, and `InvestmentAccount` — must provide their own unique implementation of this method. Each subclass overrides `get_service_charges()` with logic specific to its account type:
+
+- **ChequingAccount** calculates overdraft fees when the balance falls below the overdraft limit.  
+- **SavingsAccount** applies a premium service charge when the balance drops below the minimum balance.  
+- **InvestmentAccount** adds a management fee to the base charge unless the account is more than ten years old.
+
+This allows the program to treat all su
