@@ -37,4 +37,29 @@ The abstract class `BankAccount` defines the abstract method `get_service_charge
 - **SavingsAccount** applies a premium service charge when the balance drops below the minimum balance.  
 - **InvestmentAccount** adds a management fee to the base charge unless the account is more than ten years old.
 
-This allows the program to treat all su
+## Strategy Pattern
+The **Strategy Pattern** is used in this application to make the calculation  
+of service charges flexible and scalable. Instead of implementing all  
+charge logic inside each account subclass, dedicated **strategy classes**  
+handle each algorithm independently.
+
+Each account type uses its own strategy:
+- **ChequingAccount** → `OverdraftStrategy` calculates service charges  
+  based on overdraft limit and rate.  
+- **SavingsAccount** → `MinimumBalanceStrategy` determines charges  
+  based on whether the account meets its minimum balance.  
+- **InvestmentAccount** → `ManagementFeeStrategy` applies or waives  
+  management fees depending on the account’s creation date.
+
+This design supports easy extension — new account types or service  
+charge rules can be added without modifying existing code, following  
+the **Open/Closed Principle (OCP)** and promoting **loose coupling**.
+
+---
+
+## Testing
+Unit tests (`pytest`) were created for all account types to verify  
+the correct behaviour of `get_service_charges()` and other key methods.  
+All test files (`test_chequing_account.py`, `test_savings_account.py`,  
+`test_investment_account.py`) pass successfully after implementing  
+the Strategy Pattern.
