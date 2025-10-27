@@ -63,3 +63,10 @@ the correct behaviour of `get_service_charges()` and other key methods.
 All test files (`test_chequing_account.py`, `test_savings_account.py`,  
 `test_investment_account.py`) pass successfully after implementing  
 the Strategy Pattern.
+
+## Observer Pattern
+
+The Observer Pattern is used in this project so clients can be automatically informed when something important happens in their bank accounts.  
+Each bank account (Chequing, Savings, or Investment) acts as a subject, and each client acts as an observer.  
+When a client is attached to an account, they get a simulated email alert if a large transaction occurs or if their balance goes below the minimum limit.  
+This setup makes the system more organized and allows updates to happen without changing the main account code.
