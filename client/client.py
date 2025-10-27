@@ -10,9 +10,13 @@ to ensure data integrity.
 """
 
 from email_validator import validate_email, EmailNotValidError
+from datetime import datetime
+from patterns.observer.observer import Observer
+from utility.file_utils import simulate_send_email
 
 
-class Client:
+
+class Client(Observer):
     """
     Represents a client within the banking system.
 
@@ -120,5 +124,19 @@ class Client:
             Clark, Susan [1010] - susanclark@pixell.com
         """
         return f"{self.__last_name}, {self.__first_name} [{self.__client_number}] - {self.__email_address}\n"
+    
+    def update(self, message: str) -> None:
+        """
+        Receive a notification and simulate sending an alert email.
 
-        
+        Subject:
+            ALERT: Unusual Activity: {current date/time}
+        Message:
+            Notification for {client_number}: {first_name} {last_name}: {message}
+        """
+        subject_line = f"ALERT: Unusual Activity: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        body = f"Notification for {self.__client_number}: {self.__first_name} {self.__last_name}: {message}"
+        simulate_send_email(self.__email_address, subject_line, body)
+
+
+    

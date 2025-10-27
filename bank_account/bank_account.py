@@ -10,8 +10,10 @@ follows the assignment’s currency requirements.
 """
 from abc import ABC, abstractmethod
 from datetime import date
+from patterns.observer.subject import Subject
 
-class BankAccount(ABC):
+
+class BankAccount(Subject, ABC):
     """
     Represents a bank account within the banking system.
 
@@ -20,7 +22,10 @@ class BankAccount(ABC):
         __client_number (int): Client number of the account holder.
         __balance (float): Current account balance.
     """
-    BASE_SERVICE_CHARGE = 0.50
+
+    LARGE_TRANSACTION_THRESHOLD: float = 9999.99
+    LOW_BALANCE_LEVEL: float = 50.0
+
 
     def __init__(self, account_number: int, client_number: int, balance, date_created: date):
         """
@@ -35,6 +40,8 @@ class BankAccount(ABC):
             ValueError: If account_number is not an integer.
             ValueError: If client_number is not an integer.
         """
+        super().__init__()  # this initializes self._observers = []
+        
         # Validate account_number
         if not isinstance(account_number, int):
             raise ValueError("Account number must be an integer.")
@@ -81,6 +88,21 @@ class BankAccount(ABC):
     def date_created(self) -> date:
         """Return the date when the account was created."""
         return self._date_created
+    
+    def attach(self, observer):
+        """Add a new observer (Client) to the observer list."""
+        self._observers.append(observer)
+
+    def detach(self, observer):
+        """Remove an observer (Client) from the observer list."""
+        if observer in self._observers:
+            self._observers.remove(observer)
+
+    def notify(self, message: str):
+        """Notify all registered observers of an event."""
+        for observer in self._observers:
+            observer.update(message)
+
 
 
 
@@ -102,6 +124,15 @@ class BankAccount(ABC):
             # Invalid amount → no update
             return
         self.__balance += delta
+
+        # ---- Observer Notifications ----
+        # Notify if balance falls below threshold
+        if self.__balance < self.LOW_BALANCE_LEVEL:
+            self.notify(f"Low balance warning ${self.__balance:,.2f}: on account {self.__account_number}.")
+
+        # Notify if transaction exceeds large threshold
+        if abs(delta) > self.LARGE_TRANSACTION_THRESHOLD:
+            self.notify(f"Large transaction ${abs(delta):,.2f}: on account {self.__account_number}.")
 
     def deposit(self, amount) -> None:
         """
