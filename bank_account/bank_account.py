@@ -8,9 +8,10 @@ validation in the constructor, and controlled state changes through
 public methods (update_balance, deposit, withdraw). String formatting
 follows the assignment’s currency requirements.
 """
+from abc import ABC, abstractmethod
+from datetime import date
 
-
-class BankAccount:
+class BankAccount(ABC):
     """
     Represents a bank account within the banking system.
 
@@ -19,8 +20,9 @@ class BankAccount:
         __client_number (int): Client number of the account holder.
         __balance (float): Current account balance.
     """
+    BASE_SERVICE_CHARGE = 0.50
 
-    def __init__(self, account_number: int, client_number: int, balance):
+    def __init__(self, account_number: int, client_number: int, balance, date_created: date):
         """
         Initialize a new BankAccount with validation.
 
@@ -49,6 +51,13 @@ class BankAccount:
         except (TypeError, ValueError):
             self.__balance = 0.0
 
+        # Validate / assign date_created
+        if isinstance(date_created, date):
+            self._date_created = date_created
+        else:
+            self._date_created = date.today()
+
+
     # ---------------------------------------------------------------------
     # Accessors (properties)
     # ---------------------------------------------------------------------
@@ -67,6 +76,13 @@ class BankAccount:
     def balance(self) -> float:
         """Return the current account balance."""
         return self.__balance
+    
+    @property
+    def date_created(self) -> date:
+        """Return the date when the account was created."""
+        return self._date_created
+
+
 
     # ---------------------------------------------------------------------
     # Behavior
@@ -153,4 +169,10 @@ class BankAccount:
         Format (with trailing newline):
             "Account Number: {account_number} Balance: ${balance:,.2f}\n"
         """
-        return f"Account Number: {self.__account_number} Balance: ${self.__balance:,.2f}\n"
+        return f"Account Number: {self.__account_number} Balance: ${self.__balance:,.2f}"
+    
+    @abstractmethod
+    def get_service_charges(self) -> float:
+        """Return the calculated service charges. Implemented by subclasses."""
+        pass
+
