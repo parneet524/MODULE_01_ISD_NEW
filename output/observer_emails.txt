@@ -38,3 +38,63 @@ To: michaelbrown@pixell.com
 Subject: ALERT: Unusual Activity: 2025-10-27 14:09:55
 Message: Notification for 2020: Michael Brown: Large transaction $20,000.00: on account 5555555.
 ---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:31
+Message: Notification for 1010: Susan Clark: Large transaction $15,000.00: on account 1234567.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:31
+Message: Notification for 1010: Susan Clark: Low balance warning $40.00: on account 9483914.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:31
+Message: Notification for 1010: Susan Clark: Large transaction $12,000.00: on account 9483914.
+---
+---
+To: michaelbrown@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:31
+Message: Notification for 2020: Michael Brown: Large transaction $20,000.00: on account 5555555.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:37
+Message: Notification for 1010: Susan Clark: Large transaction $15,000.00: on account 1234567.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:37
+Message: Notification for 1010: Susan Clark: Low balance warning $40.00: on account 9483914.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:37
+Message: Notification for 1010: Susan Clark: Large transaction $12,000.00: on account 9483914.
+---
+---
+To: michaelbrown@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:14:37
+Message: Notification for 2020: Michael Brown: Large transaction $20,000.00: on account 5555555.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:15:10
+Message: Notification for 1010: Susan Clark: Large transaction $15,000.00: on account 1234567.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:15:10
+Message: Notification for 1010: Susan Clark: Low balance warning $40.00: on account 9483914.
+---
+---
+To: susanclark@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:15:10
+Message: Notification for 1010: Susan Clark: Large transaction $12,000.00: on account 9483914.
+---
+---
+To: michaelbrown@pixell.com
+Subject: ALERT: Unusual Activity: 2025-10-27 14:15:10
+Message: Notification for 2020: Michael Brown: Large transaction $20,000.00: on account 5555555.
+---

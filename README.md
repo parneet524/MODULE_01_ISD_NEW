@@ -70,3 +70,20 @@ The Observer Pattern is used in this project so clients can be automatically inf
 Each bank account (Chequing, Savings, or Investment) acts as a subject, and each client acts as an observer.  
 When a client is attached to an account, they get a simulated email alert if a large transaction occurs or if their balance goes below the minimum limit.  
 This setup makes the system more organized and allows updates to happen without changing the main account code.
+
+
+## Event-Driven Programming Paradigm
+
+This application uses the Event-Driven Programming approach, where the program waits for the user to do something and then responds to that action. Instead of running in a fixed order, the flow of the program is controlled by events such as button clicks or selecting items in the table.
+
+For example:
+
+When the user clicks the Lookup Client button, the program reacts by searching for the client and loading their account information.
+
+Selecting a row in the accounts table triggers the program to open the Account Details window for that specific account.
+
+In the Account Details window, the Deposit and Withdraw buttons perform actions based on what the user chooses, and the balance display updates right away.
+
+A custom signal (balance_updated) is sent every time a transaction is successful. The Client Lookup window receives this signal and refreshes the balance in the table, updates the internal account data, and writes the new balance back to the CSV file.
+
+Overall, the application responds to whatever the user does, making it interactive. Events guide how the program behaves, and the signal system helps keep both windows synchronized whenever account information changes.
