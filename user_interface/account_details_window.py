@@ -79,6 +79,8 @@ class AccountDetailsWindow(DetailsWindow):
             # Update balance label after successful transaction
             self.balance_label.setText(f"${self.account.balance:,.2f}")
 
+            self.balance_updated.emit(self.account)
+
             # Clear and refocus amount box
             self.transaction_amount_edit.setText("")
             self.transaction_amount_edit.setFocus()

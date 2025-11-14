@@ -119,6 +119,29 @@ class ClientLookupWindow(LookupWindow):
         # Valid → open details window
         account = self.accounts[account_number]
         dlg = AccountDetailsWindow(account)
+        
+        dlg.balance_updated.connect(self.update_data)
+        
         dlg.exec()
+
+    def update_data(self, updated_account: BankAccount):
+        """
+        Updates the table, dictionary and CSV when balance changes.
+        """
+        # Update the table
+        for row in range(self.account_table.rowCount()):
+            acct_num_text = self.account_table.item(row, 0).text().strip()
+
+            if acct_num_text == str(updated_account.account_number):
+                new_balance_item = QTableWidgetItem(f"${updated_account.balance:,.2f}")
+                self.account_table.setItem(row, 1, new_balance_item)
+                break
+
+        # Update dictionary
+        self.accounts[updated_account.account_number] = updated_account
+
+        # Update CSV file
+        update_data(updated_account)
+
 
         
