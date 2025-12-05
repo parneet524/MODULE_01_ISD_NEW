@@ -53,10 +53,12 @@ accounts_csv_path = os.path.join(data_dir, 'accounts.csv')
 
 def load_data() -> tuple[dict, dict]:
     """
-    Loads client and account information from the CSV files.
-    Returns two dictionaries:
-        client_listing: {client_number: Client}
-        accounts: {account_number: BankAccount subclass}
+    Load client and account information from the CSV files.
+
+    Returns:
+        tuple: Two dictionaries:
+            - client_listing (dict): A dictionary mapping client numbers to Client objects.
+            - accounts (dict): A dictionary mapping account numbers to BankAccount subclasses.
     """
 
     client_listing = {}
@@ -173,11 +175,12 @@ def load_data() -> tuple[dict, dict]:
 
 def update_data(updated_account: BankAccount) -> None:
     """
-    A function to update the accounts.csv file with balance 
-    data provided in the BankAccount argument.
+    Update the accounts.csv file to reflect the new balance for the given account.
+
     Args:
-        updated_account (BankAccount): A bank account containing an updated balance.
+        updated_account (BankAccount): The bank account object containing the updated balance.
     """
+    
     updated_rows = []
 
     with open(accounts_csv_path, mode='r', newline='') as file:
