@@ -22,6 +22,8 @@ class ClientLookupWindow(LookupWindow):
         self.lookup_button.clicked.connect(self.on_lookup_client)
         self.client_number_edit.textChanged.connect(self.on_text_changed)
         self.account_table.cellClicked.connect(self.on_select_account)
+        self.filter_button.clicked.connect(self.on_filter_clicked)
+
 
     def on_lookup_client(self):
         """
@@ -81,6 +83,9 @@ class ClientLookupWindow(LookupWindow):
 
         # Adjust columns so they fit the data
         self.account_table.resizeColumnsToContents()
+
+        # RESET FILTER STATE because a NEW client was loaded
+        self.toggle_filter(False)
 
     def on_text_changed(self):
         """
@@ -143,5 +148,62 @@ class ClientLookupWindow(LookupWindow):
         # Update CSV file
         update_data(updated_account)
 
+    def on_filter_clicked(self):
+        """
+        Handles applying or resetting the filter.
+        """
 
-        
+        # APPLY FILTER
+        if self.filter_button.text() == "Apply Filter":
+
+            column_index = self.filter_combo_box.currentIndex()
+            filter_value = self.filter_edit.text().strip().lower()
+
+            # Loop through each row
+            for row in range(self.account_table.rowCount()):
+                item = self.account_table.item(row, column_index)
+
+                # Show matching rows, hide others
+                if item and filter_value in item.text().lower():
+                    self.account_table.setRowHidden(row, False)
+                else:
+                    self.account_table.setRowHidden(row, True)
+
+            # Filtering ON
+            self.toggle_filter(True)
+
+        else:
+            # RESET FILTER
+            self.toggle_filter(False)
+
+    def toggle_filter(self, filter_on: bool):
+        """
+        Enables/disables filter widgets and updates display text.
+        """
+
+        # Always enable filter button when client exists
+        self.filter_button.setEnabled(True)
+
+        if filter_on:
+            self.filter_button.setText("Reset")
+            self.filter_combo_box.setEnabled(False)
+            self.filter_edit.setEnabled(False)
+            self.filter_label.setText("Data is Currently Filtered")
+
+        else:
+            self.filter_button.setText("Apply Filter")
+            self.filter_combo_box.setEnabled(True)
+            self.filter_edit.setEnabled(True)
+            self.filter_edit.setText("")
+            self.filter_combo_box.setCurrentIndex(0)
+
+            # Show all rows again
+            for row in range(self.account_table.rowCount()):
+                self.account_table.setRowHidden(row, False)
+
+            self.filter_label.setText("Data is Not Currently Filtered")
+
+
+
+
+            
