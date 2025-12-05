@@ -90,4 +90,13 @@ Overall, the application responds to whatever the user does, making it interacti
 
 
 
-Assignment 5: Filtering, HTML documentation, PyInstaller executable, and Inno Setup installer.
+## Assignment 5: Filtering, HTML documentation, PyInstaller executable, and Inno Setup installer.
+
+# Filtering
+
+Filtering was included in this application to make it easier for users to locate specific information without having to manually search through all clients and accounts. When the user enters a value—such as a client number—the program goes through the full dataset in the background and keeps only the items that match the user’s request. Everything else is ignored.
+
+This feature is important because the application stores multiple clients and many different types of bank accounts. Without filtering, the screen would show every record at once, which would be confusing and time-consuming for the user. With filtering, the user immediately sees only the client they searched for and the accounts that belong to that client.
+
+By adding this functionality, the application becomes more efficient, user-friendly, and organized. It improves the overall experience because users can quickly look up details, perform transactions on the correct account, and avoid mistakes that might happen when too much information is shown at the same time.
+
