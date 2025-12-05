@@ -1,7 +1,7 @@
 account_number,client_number,balance,date_created,account_type,overdraft_limit,overdraft_rate,minimum_balance,management_fee
 20001,1001,17110.0,2023-01-10,ChequingAccount,-50,0.035,Null,Null
 20002,1001,301.54,2023-01-15,SavingsAccount,Null,Null,50,Null
-22222,1001,380.33,2023-05-05,SavingsAccount,Null,Null,100,Null
+22222,1001,434.33,2023-05-05,SavingsAccount,Null,Null,100,Null
 20003,1002,1200.87,2023-02-01,ChequingAccount,-100,0.035,Null,Null
 20004,1002,4500.87,2023-02-05,InvestmentAccount,Null,Null,Null,5
 20005,1003,3456.65,2023-03-12,SavingsAccount,Null,Null,150,Null
@@ -37,7 +37,7 @@ account_number,client_number,balance,date_created,account_type,overdraft_limit,o
 20035,1003,278.67,2023-10-10,SavingsAccount,Null,Null,17,Null
 20036,1008,19929.13,2023-10-10,ChequingAccount,-189,0.012,Null,Null
 20037,1010,5362.76,2023-10-10,InvestmentAccount,Null,Null,Null,5.55
-20038,1006,44452937.23,2023-10-10,SavingsAccount,Null,Null,84,Null
+20038,1006,8493.23,2023-10-10,SavingsAccount,Null,Null,84,Null
 20039,1009,29820.99,2023-10-10,ChequingAccount,-990,0.041,Null,Null
 20040,1001,18645.22,2023-10-10,InvestmentAccount,Null,Null,Null,2.65
 20041,1007,14735.64,2023-10-10,SavingsAccount,Null,Null,37,Null
@@ -50,7 +50,7 @@ account_number,client_number,balance,date_created,account_type,overdraft_limit,o
 20048,1009,24422.55,2023-10-10,ChequingAccount,-432,0.021,Null,Null
 20049,1002,17.889999999999418,2023-10-10,InvestmentAccount,Null,Null,Null,5.88
 20050,1007,12943.98,2023-10-10,SavingsAccount,Null,Null,20,Null
-20051,1001,56786594709.07,2023-10-10,ChequingAccount,-57,0.074,Null,Null
+20051,1001,26812.07,2023-10-10,ChequingAccount,-57,0.074,Null,Null
 20052,1005,13502.48,2023-10-10,InvestmentAccount,Null,Null,Null,0.35
 20053,1004,5927.85,2023-10-10,SavingsAccount,Null,Null,43,Null
 20054,1003,24902.16,2023-10-10,ChequingAccount,-1000,0.065,Null,Null
@@ -90,7 +90,7 @@ account_number,client_number,balance,date_created,account_type,overdraft_limit,o
 20088,1009,32219,2023-10-10,InvestmentAccount,Null,Null,Null,4.05
 20089,1002,14758.66,2023-10-10,SavingsAccount,Null,Null,47,Null
 20090,1007,16293.34,2023-10-10,ChequingAccount,-492,0.022,Null,Null
-20091,1001,10156.77,2023-10-10,InvestmentAccount,Null,Null,Null,3.29
+20091,1001,13156.77,2023-10-10,InvestmentAccount,Null,Null,Null,3.29
 20092,1005,8427.66,2023-10-10,SavingsAccount,Null,Null,79,Null
 20093,1004,6278.22,2023-10-10,ChequingAccount,-839,0.054,Null,Null
 20094,1003,13214.33,2023-10-10,InvestmentAccount,Null,Null,Null,4.67

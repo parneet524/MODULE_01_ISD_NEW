@@ -1,10 +1,10 @@
 ('C:\\Users\\parneet  '
  'kaur\\OneDrive\\Desktop\\intermediate_software_development\\project\\isd_project\\build\\pixell_river\\pixell_river.exe',
- True,
+ False,
  False,
  True,
  'C:\\Users\\parneet  '
- 'kaur\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
+ 'kaur\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-windowed.ico',
  None,
  False,
  False,
@@ -85,10 +85,10 @@
  [],
  False,
  False,
- 1764970081,
- [('run.exe',
+ 1764974444,
+ [('runw.exe',
    'C:\\Users\\parneet  '
-   'kaur\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
+   'kaur\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
    'EXECUTABLE')],
  'C:\\Users\\parneet  '
  'kaur\\AppData\\Local\\Programs\\Python\\Python313\\python313.dll')

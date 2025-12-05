@@ -1,0 +1,15 @@
+Thank you for installing PiXELL-River Account Manager!
+
+You have successfully installed the PiXELL-River Account Manager application on your computer.
+
+Getting Started:
+1. You can launch the program using the shortcut automatically created on your Desktop or from your Start Menu under “PiXELL-River Account Manager”.
+2. Ensure that your data files remain within the installation directory to maintain full functionality.
+3. Check for updates periodically to make sure you are using the latest version.
+
+If you experience any issues, please contact PiXELL-River Support or refer to the official documentation provided with the application.
+
+We hope you enjoy using our product, and we look forward to supporting your journey!
+
+Best regards,  
+The PiXELL-River Account Manager Team

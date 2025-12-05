@@ -19,28 +19,33 @@ from datetime import date
 
 
 # *******************************************************************************
-# GIVEN LOGGING AND FILE ACCESS CODE
- 
-# Absolute path to root of directory
-root_dir = os.path.dirname(os.path.dirname(__file__))
- 
-# Path to the log directory relative to the root directory
-log_dir = os.path.join(root_dir, 'logs')
- 
-# Create the log directory if it doesn't exist
-os.makedirs(log_dir, exist_ok = True)
- 
-# Specify the path to the log file within the log directory
-log_file_path = os.path.join(log_dir, 'manage_data.log')
- 
-# Configure logging to use the specified log file
-logging.basicConfig(filename=log_file_path, filemode='a',
-                    format='%(name)s - %(levelname)s - %(message)s\n\n')
+# SAFE LOGGING (works inside Program Files without crashing)
+
+from pathlib import Path
+
+# Use LocalAppData (safe writable folder for installed apps)
+appdata_path = Path(os.getenv("LOCALAPPDATA")) / "PiXELL-River" / "logs"
+
+# Create directory if missing
+appdata_path.mkdir(parents=True, exist_ok=True)
+
+# Log file path
+log_file_path = appdata_path / "manage_data.log"
+
+# Configure logging
+logging.basicConfig(
+    filename=str(log_file_path),
+    filemode='a',
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s\n'
+)
+# *******************************************************************************
+
  
 # Given File Path Code:
 # Designed to locate the input files without providing any directory structure
 
 # Construct the absolute path to the data directory at the root of the project
+root_dir = os.path.dirname(os.path.dirname(__file__))
 data_dir = os.path.join(root_dir, 'data')
  
 # Construct the absolute paths to the data files
