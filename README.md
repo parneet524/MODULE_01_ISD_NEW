@@ -87,3 +87,7 @@ In the Account Details window, the Deposit and Withdraw buttons perform actions 
 A custom signal (balance_updated) is sent every time a transaction is successful. The Client Lookup window receives this signal and refreshes the balance in the table, updates the internal account data, and writes the new balance back to the CSV file.
 
 Overall, the application responds to whatever the user does, making it interactive. Events guide how the program behaves, and the signal system helps keep both windows synchronized whenever account information changes.
+
+
+
+Assignment 5: Filtering, HTML documentation, PyInstaller executable, and Inno Setup installer.
